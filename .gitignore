@@ -1,3 +1,4 @@
 nn_model_vgg_19.h5
 model_VGG16.h5
 videos/
+deteccion_streamlit.ipynb
