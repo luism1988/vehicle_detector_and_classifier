@@ -1,17 +1,15 @@
 import streamlit as st
-from IPython.display import HTML
-import base64
 import cv2
-import cv2
-import time
-from keras.applications.imagenet_utils import preprocess_input, decode_predictions
+#from keras.applications.imagenet_utils import preprocess_input, decode_predictions
 from keras.models import load_model
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import numpy as np
+from funtions import roi_detection, vehicle_classifier_and_labeler
+
 # Load car classifier
 car_classifier = cv2.CascadeClassifier('../datasets/cars.xml')
 #load model
-modelt = load_model("../nn_model_Mobilenet_200.h5")
+model = load_model("../nn_model_Mobilenet_200.h5")
 
 
 
@@ -48,33 +46,46 @@ if sidebar_selection == "Vehicle Detector and Classifier":
     names = ['bus', 'car', 'truck']
     FRAME_WINDOW = st.image([]) #imagen en streamlit
     cap = cv2.VideoCapture('mer1_mod.mp4')
-
+    cap.set(cv2.CAP_PROP_FPS,0.1)
+    count = 2
     while run: #si se la ha dado al boton o no
 
+        # Read the next frame from the video
         ret, frame = cap.read()
         if not ret:
-            break   
-            
-        # Convert the frame to grayscale
-        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-        
-        # Detect cars in the frame
-        cars = car_classifier.detectMultiScale(gray, scaleFactor=1.05, minNeighbors=5, minSize=(50, 50))
+            break
 
-        # Draw bounding boxes and labels around the vehicles 
+        # Detect cars in the frame
+        # Define las coordenadas del ROI (Region of interest)
+        x1, y1 = 100, 550
+        x2, y2 = 720, 750
+
+        #Region of interest
+        roi = frame[y1:y2,x1:x2]
+
+        cars = roi_detection(frame,car_classifier, roi, x1,x2,y1,y2)
+
+        # Para cada deteccion realizar la clasificacion y dibujar la etiqueta
+        
         for (x,y,w,h) in cars:
-            #texto = "Prueba"
-            posicion_etiqueta = (x , y - 10)
+            cv2.rectangle(frame, (x+x1, y+y1), (x+x1+w, y+y1+h), (0, 255, 255), 2)
+            if count % 2 ==0:    
+                preds = vehicle_classifier_and_labeler(x, y, x1, y1, w, h, model, frame, roi)
+                #Dibujar el rectangulo de l deteccion
             
-            cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 255), 2)
+                posicion_etiqueta = (x+x1 , y+y1 - 10)
+                #Colocar etiqueta
+            preds2 = preds 
+            pos = posicion_etiqueta
+            cv2.putText(frame, names[np.argmax(preds2)], pos, cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
             
+        count += 1       
         frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB) #haciendo la imagen que va a mostrar streamlit
         FRAME_WINDOW.image(frame) #pintamos la imagen actual del video despues de todas las características que hemos puesto
 
     else: 
         st.write("Has salido de la app") #si el boton no esta puesto
-        cap.release()
-        cv2.destroyAllWindows() #cierra todo
+        
 
 
 

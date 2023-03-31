@@ -1,4 +1,5 @@
-nn_model_vgg_19.h5
-model_VGG16.h5
+nn_model_CNN_200.h5
+nn_model_Mobilenet_200.h5
+nn_model_vgg_19_v2_200.h5
 videos/
 deteccion_streamlit.ipynb
