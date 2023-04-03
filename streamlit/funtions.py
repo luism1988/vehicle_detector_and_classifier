@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 from keras.applications.imagenet_utils import preprocess_input
+
 def roi_detection(frame,car_classifier, roi, x1,x2,y1,y2):
 
     # Dibuja un rectángulo sobre la imagen original

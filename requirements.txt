@@ -1,0 +1,8 @@
+  python == 3.10.9
+  streamlit == 1.20.0
+  numpy == 1.23.5
+  keras == 2.10.0
+  tensorflow == 2.10.0
+  opencv == 4.6.0
+
+ 

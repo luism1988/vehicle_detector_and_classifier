@@ -47,7 +47,8 @@ El utilizado para realizar la clasificación de vehículos fue entrenado con los
 -	Una red neuronal basada en una red pre entrenada VGG-19.
 -	Una red neuronal basada en una red pre entrenada MobileNet.
 
-La red que obtuvo los mejores resultados (y utilizada para clasificar los vehículos detectados) fue la red basada en MobileNet, la cual se no se incluyó la última capa y se le añadieron dos capas densas de 128 neuronas y una capa de salida de 3 neuronas (una para cada clase). 
+La red que obtuvo los mejores resultados (y utilizada para clasificar los vehículos detectados) fue la red basada en MobileNet, la cual se no se incluyó la última capa y se le añadieron dos capas densas de 128 neuronas y una capa de salida de 3 neuronas (una para cada clase).a continuación, se pueden ver las curvas y métricas de los modelos de clasificación entrenados:
+
 
 - ### Curvas y métricas del modelo basado en MobileNet:
 <p align="center">
@@ -55,10 +56,10 @@ La red que obtuvo los mejores resultados (y utilizada para clasificar los vehíc
 
 - ### Curvas y métricas del modelo basado en VGG-19:
 <p align="center">
-  <img src="https://github.com/luism1988/vehicle_detector_and_classifier/blob/main/streamlit/img/metricas.png?raw=true" width="800">
+  <img src="https://github.com/luism1988/vehicle_detector_and_classifier/blob/main/streamlit/img/metricas2.png?raw=true" width="800">
 
 - ### Curvas y métricas del modelo basado en una red neuronal convolucional customizada:
 <p align="center">
-  <img src="https://github.com/luism1988/vehicle_detector_and_classifier/blob/main/streamlit/img/metricas.png?raw=true" width="800">
+  <img src="https://github.com/luism1988/vehicle_detector_and_classifier/blob/main/streamlit/img/metricas3.png?raw=true" width="800">
 
 

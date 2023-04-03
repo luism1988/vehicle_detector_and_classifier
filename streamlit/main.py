@@ -52,12 +52,9 @@ if sidebar_selection == "Vehicle Detector and Classifier":
     st.image('img/baner.jpg') 
     st.markdown("<h1 style='text-align: center; color: black;'>VEHICLE DETECTOR AND CLASSIFIER</h1>", unsafe_allow_html=True)
     
-
     #Subtitle
     st.markdown("**Select a video:**")
     selection = st.selectbox("",["Select a video","Video1","Video2","Video3","Video4","Video5","Video6","Video7"])
-
-    
 
     run = st.checkbox('Play video and detection') #boton para activar la ejecucion del video.
 
@@ -73,7 +70,7 @@ if sidebar_selection == "Vehicle Detector and Classifier":
         if not ret:
             break
 
-        # Detect cars in the frame
+        # Detect vehicles in the ROI
         # Define las coordenadas del ROI (Region of interest)
         x1, y1 = 0, 600
         x2, y2 = 720, 750
