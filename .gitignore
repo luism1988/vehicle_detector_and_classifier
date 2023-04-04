@@ -1,5 +1,4 @@
 nn_model_CNN.h5
-nn_model_Mobilenet.h5
 nn_model_vgg_19.h5
 videos/
 manipulation/
