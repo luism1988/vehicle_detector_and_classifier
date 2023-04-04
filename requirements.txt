@@ -2,6 +2,6 @@ streamlit
 numpy == 1.23.5
 keras == 2.10.0
 tensorflow == 2.10.0
-opencv
+opencv-python-headless==4.6.0
 
  
