@@ -41,7 +41,7 @@ if sidebar_selection == "Home page":
     st.subheader("**Created by:**")
     st.subheader("Luis Manuel Rodríguez")
     st.markdown("**Data Scientist | Six Sigma Black Belt | Process Engineer**")
-    st.markdown("[LinkedIn](https://www.linkedin.com/in/luis-manuel-rodríguez-román-9b19a8bb)")
+    st.markdown("[LinkedIn](https://www.linkedin.com/in/luis-manuel-rodr%C3%ADguez/)")
     st.markdown("[Github](https://github.com/luism1988)")
   
 
