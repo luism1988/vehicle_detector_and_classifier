@@ -8,6 +8,10 @@
 Detección y clasificación de vehículos es un proyecto académico, el cual consiste en detectar vehículos utilizando OpenCv para luego ser clasificados por un modelo de redes neuronales previamente entrenado con un dataset de creación propia. 
 En su desarrollo se emplearon diferentes stacks tecnológicos como Python, OpenCV, Keras y Tensorflow y Streamlit (entre otros).
 
+<p align="center">
+  <img src="https://github.com/luism1988/vehicle_detector_and_classifier/blob/main/streamlit/img/gif3.gif?raw=true" width="400">
+</p>
+
 ## Objetivo:
 - Utilizar openCV para detectar vehículos.
 - Creación de un datasaet partiendo de videos grabados en un avenida con tres clases: coche, bus y camión.
