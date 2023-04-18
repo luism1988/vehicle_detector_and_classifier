@@ -23,6 +23,7 @@ if sidebar_selection == "Home page":
     st.markdown("<h1 style='text-align: center; color: black;'>VEHICLE DETECTOR AND CLASSIFIER</h1>", unsafe_allow_html=True)
     st.subheader("**Descripción:**")
     st.markdown("**Detección y clasificación de vehículos** es el proyecto académico, el cual consiste en detectar vehículos utilizando OpenCv para luego ser clasificados por un modelo de redes neuronales previamente entrenado con dataset de creación propia. ")
+    st.image('img/gif1.gif')
     st.subheader("**Dataset:**")
     st.markdown("El dataset fue creado partiendo de videos grabados desde la parte superior de una avenida, luego estos videos fueron procesados por un código en Python con OpenCV. Este script utiliza un modelo de detección “haarcascade_car.xml” para localizar los vehículos y luego guardarlos en imágenes que luego fueron clasificadas manualmente en tres clases: “bus”, “car” y “truck.")
     st.markdown("El dataset tiene 1109 imágenes distribuidas de la siguiente forma:")
